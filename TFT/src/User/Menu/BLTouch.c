@@ -10,7 +10,7 @@ const MENUITEMS BLTouchItems = {
     {ICON_BLTOUCH_DEPLOY,          LABEL_DEPLOY},
     {ICON_BLTOUCH_STOW,            LABEL_STOW},
     {ICON_BLTOUCH_REPEAT,          LABEL_REPEAT},
-    {ICON_BACKGROUND,              LABEL_BACKGROUND},
+    {ICON_Z_HOME,                  LABEL_HOME},
     {ICON_BACKGROUND,              LABEL_BACKGROUND},
     {ICON_BACK,                    LABEL_BACK},
   }
@@ -46,6 +46,12 @@ void menuBLTouch(void)
       case KEY_ICON_4:
         storeCmd("G28\n");
         storeCmd("M48\n");
+        break;
+
+      case KEY_ICON_5:
+        storeCmd("M280 P0 S160\n");
+        storeCmd("G4 P100\n");
+        storeCmd("G28 Z\n");
         break;
 
       case KEY_ICON_7:
